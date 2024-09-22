@@ -25,8 +25,8 @@ export default function Header() {
       <h1 className='name' onClick={() => navigate('/')}>HealthCare</h1>
       <ul>
         <li htmlFor='channel'>Channels </li>
-        <select name='channel' id='channel'>
-              <option value='myChannel'>My Channel</option>
+        <select name='channel' id='channel' onClick={() => navigate("/create-channel")}> 
+              <option value='myChannel'><span >My Channel</span></option>
               <option value='Public Channel'>Public Channel</option>
               <option value='Private Channel'>Private Channel</option>
         </select>

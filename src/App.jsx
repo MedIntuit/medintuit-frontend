@@ -12,7 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/channel" element={<Channel />} />
+        <Route path="/create-channel" element={<Channel />} />
       </Routes>
     </>
   );

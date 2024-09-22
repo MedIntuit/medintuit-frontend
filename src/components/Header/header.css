@@ -8,6 +8,11 @@
     padding: 15px 20px;
 }
 
+.name {
+  cursor: pointer;
+  text-decoration: overline;
+}
+
 ul{
     flex:1;
     list-style: none;
