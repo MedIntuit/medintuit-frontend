@@ -1,32 +1,17 @@
-
-import './App.css'
-
-import Header from './header.jsx'
-import Form from './Form.jsx'
-// import Login from './Login.jsx'
-// import Register from './Register.jsx'
-
+import "./App.css";
+import Form from "./components/Form";
+import Header from "./components/Header";
 
 function App() {
-
-
   return (
     <>
-      {/* <div>
-        <Login/>
-        <Register/>
-      </div> */}
-      <div className='container'>
-        <Header/>
-        <h1 className='heading'>New Channel</h1>
-        <Form/>
-        
+      <div className="container">
+        <Header />
+        <h1 className="heading">New Channel</h1>
+        <Form />
       </div>
-      
     </>
-    
-    
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+// import { useState } from 'react'
 import './header.css'
 // const Dropdown =()=>{
 //   const[selectedOption,setSelectedOption] =useState('');
@@ -17,7 +17,7 @@ import './header.css'
 // };
 
 
-export default function header() {
+export default function Header() {
   return (
     <div className='header'>
       <h1 className='name'>HealthCare</h1>
