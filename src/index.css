@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container{
+    width:100vw;
+    height:100vh;
+    background-color: rgb(163, 204, 235);
+}
+.container2{
+  color: black;
+  padding:20px  50px;
+  display: block;
+  display: inline;
+  text-align: center;
+}
+.heading{
+  display: flex;
+}
