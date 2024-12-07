@@ -6,10 +6,11 @@ export default function Header() {
   return (
     <div className="header">
       <h1 className="name" onClick={() => navigate("/")}>
-        HealthCare
+        MedIntuit
       </h1>
       <ul className="header-links">
-        <li className="channel-options-wrapper" htmlFor="channel">Channels
+        <li className="channel-options-wrapper" htmlFor="channel">
+          Channels
           <ul className="channel-options">
             <li onClick={() => navigate("/create-channel")}>Create Channel</li>
             <li>My Channels</li>
