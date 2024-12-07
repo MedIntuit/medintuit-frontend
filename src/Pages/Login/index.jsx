@@ -4,7 +4,7 @@ import "./login.css";
 
 const Login = () => {
   const [credentials, setCredentials] = useState({
-    username: "",
+    email: "",
     password: "",
   });
 
@@ -19,11 +19,11 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log("Username:", credentials.username);
+    console.log("email:", credentials.email);
     console.log("Password:", credentials.password);
     try {
       const response = await axios.post("http://localhost:3000/login", {
-        username: credentials.username,
+        email: credentials.email,
         password: credentials.password,
       });
       console.log("res", response);
@@ -42,12 +42,12 @@ const Login = () => {
         <h2>Login</h2>
         <form onSubmit={handleSubmit}>
           <div>
-            <label htmlFor="username">Username:</label>
+            <label htmlFor="email">email:</label>
             <input
               type="text"
-              id="username"
-              name="username"
-              value={credentials.username}
+              id="email"
+              name="email"
+              value={credentials.email}
               onChange={handleChange}
               required
             />
