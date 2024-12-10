@@ -1,34 +1,124 @@
-import {useState} from 'react';
-import './Form.css';
+import { useState } from "react";
+import "./Form.css";
+import axios from "axios";
 
 export default function Form() {
-let [fullName,setFullName]=useState("");
-let handelNameChange =(event)=>{
-    setFullName(event.target.value);
-}
+  const [formData, setFormData] = useState({
+    fullName: "",
+    field1: "",
+    field2: "",
+    field3: "",
+    field4: "",
+    description: "",
+  });
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const createChannel = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post("http://localhost:3000/createchannel", {
+        ...formData,
+      });
+      window.alert("Channel Successfully Created");
+      console.log("Response:", response);
+    } catch (error) {
+      console.error(
+        "Channel Creation Failed:",
+        error.response ? error.response.data : error.message
+      );
+    }
+  };
 
   return (
-    <div className='form'>
-    <form>
-      <label htmlFor='name'>Name : </label>
-      <input type='text' placeholder='Dew Point Measurement' value={fullName} onChange={handelNameChange}/><br></br><br></br>
+    <div className="form-container">
+      <form className="form">
+        <h2 className="form-title">Create Channel</h2>
 
-      <label htmlFor='field1'>Field 1 : </label>
-      <input type='text' placeholder='Enter your field 1'/><br></br><br></br>
+        <label htmlFor="name" className="form-label">
+          Name:
+        </label>
+        <input
+          type="text"
+          name="fullName"
+          className="form-input"
+          placeholder="Dew Point Measurement"
+          value={formData.fullName}
+          onChange={handleInputChange}
+        />
 
-      <label htmlFor='field2'>Field 2 : </label>
-      <input type='text' placeholder='Enter your field 2'/><br></br><br></br>
+        <label htmlFor="field1" className="form-label">
+          Field 1:
+        </label>
+        <input
+          type="text"
+          name="field1"
+          className="form-input"
+          placeholder="Enter your field 1"
+          value={formData.field1}
+          onChange={handleInputChange}
+        />
 
-      <label htmlFor='field3'>Field 3 : </label>
-      <input type='text' placeholder='Enter your field 3'/><br></br><br></br>
+        <label htmlFor="field2" className="form-label">
+          Field 2:
+        </label>
+        <input
+          type="text"
+          name="field2"
+          className="form-input"
+          placeholder="Enter your field 2"
+          value={formData.field2}
+          onChange={handleInputChange}
+        />
 
-      <label htmlFor='field4'>Field 4 : </label>
-      <input type='text' placeholder='Enter your field 4'/><br></br><br></br>
+        <label htmlFor="field3" className="form-label">
+          Field 3:
+        </label>
+        <input
+          type="text"
+          name="field3"
+          className="form-input"
+          placeholder="Enter your field 3"
+          value={formData.field3}
+          onChange={handleInputChange}
+        />
 
-      <button type='button'>Save Channel</button>
+        <label htmlFor="field4" className="form-label">
+          Field 4:
+        </label>
+        <input
+          type="text"
+          name="field4"
+          className="form-input"
+          placeholder="Enter your field 4"
+          value={formData.field4}
+          onChange={handleInputChange}
+        />
 
-    </form>
- </div>
-  )
+        <label htmlFor="description" className="form-label">
+          Description:
+        </label>
+        <textarea
+          name="description"
+          className="form-textarea"
+          placeholder="Enter a description"
+          value={formData.description}
+          onChange={handleInputChange}
+          rows="4"
+          cols="50"
+        />
+
+        <button type="button" className="form-button" onClick={createChannel}>
+          Save Channel
+        </button>
+      </form>
+    </div>
+  );
 }
-
