@@ -1,18 +1,16 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
-import "./login.css";
-import { BASE_URL, LOGIN_URL } from "../../constants/api_urls";
+import "./signup.css";
+import { BASE_URL, SIGNUP_URL } from "../../constants/api_urls";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../context/auth";
 
-const Login = () => {
+const Signup = () => {
   const [credentials, setCredentials] = useState({
     username: "",
+    email: "",
     password: "",
   });
-
   const navigate = useNavigate();
-  const { login } = useContext(AuthContext);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,17 +22,16 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("credentials: ", credentials);
 
-    console.log("username:", credentials.username);
-    console.log("Password:", credentials.password);
     try {
-      const response = await axios.post(`${BASE_URL}/${LOGIN_URL}`, {
+      const response = await axios.post(`${BASE_URL}/${SIGNUP_URL}`, {
         username: credentials.username,
         password: credentials.password,
+        email: credentials.email,
       });
-      const token = response?.data?.accessToken;
-      if (token) login(token);
-      navigate("/");
+      console.log("res", response);
+      navigate("/login");
     } catch (error) {
       console.error(
         "Login failed:",
@@ -46,8 +43,19 @@ const Login = () => {
   return (
     <div className="login-page">
       <div className="login-container">
-        <h2>Login</h2>
+        <h2>Signup</h2>
         <form onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="email">email:</label>
+            <input
+              type="text"
+              id="email"
+              name="email"
+              value={credentials.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
           <div>
             <label htmlFor="username">username:</label>
             <input
@@ -56,6 +64,7 @@ const Login = () => {
               name="username"
               value={credentials.username}
               onChange={handleChange}
+              maxLength={8}
               required
             />
           </div>
@@ -70,11 +79,11 @@ const Login = () => {
               required
             />
           </div>
-          <button type="submit">Login</button>
+          <button type="submit">Sign Up</button>
         </form>
       </div>
     </div>
   );
 };
 
-export default Login;
+export default Signup;

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./Form.css";
 import axios from "axios";
+import { BASE_URL, CREATE_CHANNEL_URL } from "../../constants/api_urls";
 
 export default function Form() {
   const [formData, setFormData] = useState({
@@ -22,11 +23,20 @@ export default function Form() {
 
   const createChannel = async (e) => {
     e.preventDefault();
+    const token = localStorage.getItem("token");
 
     try {
-      const response = await axios.post("http://localhost:3000/createchannel", {
-        ...formData,
-      });
+      const response = await axios.post(
+        `${BASE_URL}/${CREATE_CHANNEL_URL}`,
+        {
+          name: formData.fullName,
+          field1: formData.field1,
+          description: formData.description,
+        },
+        {
+          headers: { "x-access-token": token },
+        }
+      );
       window.alert("Channel Successfully Created");
       console.log("Response:", response);
     } catch (error) {
