@@ -3,6 +3,7 @@ import axios from "axios";
 import "./signup.css";
 import { BASE_URL, SIGNUP_URL } from "../../constants/api_urls";
 import { useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 
 const Signup = () => {
   const [credentials, setCredentials] = useState({
@@ -25,12 +26,12 @@ const Signup = () => {
     console.log("credentials: ", credentials);
 
     try {
-      const response = await axios.post(`${BASE_URL}/${SIGNUP_URL}`, {
+      await axios.post(`${BASE_URL}/${SIGNUP_URL}`, {
         username: credentials.username,
         password: credentials.password,
         email: credentials.email,
       });
-      console.log("res", response);
+      toast.success("New account successfully created !");
       navigate("/login");
     } catch (error) {
       console.error(
@@ -82,6 +83,7 @@ const Signup = () => {
           <button type="submit">Sign Up</button>
         </form>
       </div>
+      <ToastContainer position="bottom-left" />
     </div>
   );
 };

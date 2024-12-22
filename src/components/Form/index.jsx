@@ -1,7 +1,9 @@
 import { useState } from "react";
-import "./Form.css";
 import axios from "axios";
 import { BASE_URL, CREATE_CHANNEL_URL } from "../../constants/api_urls";
+import { ToastContainer, toast } from "react-toastify";
+
+import "./Form.css";
 
 export default function Form() {
   const [formData, setFormData] = useState({
@@ -37,7 +39,7 @@ export default function Form() {
           headers: { "x-access-token": token },
         }
       );
-      window.alert("Channel Successfully Created");
+      toast.success("Channel Successfully Created");
       console.log("Response:", response);
     } catch (error) {
       console.error(
@@ -129,6 +131,7 @@ export default function Form() {
           Save Channel
         </button>
       </form>
+      <ToastContainer position="bottom-left" />
     </div>
   );
 }

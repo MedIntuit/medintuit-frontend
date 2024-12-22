@@ -4,6 +4,7 @@ import "./login.css";
 import { BASE_URL, LOGIN_URL } from "../../constants/api_urls";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/auth";
+import { toast, ToastContainer } from "react-toastify";
 
 const Login = () => {
   const [credentials, setCredentials] = useState({
@@ -25,8 +26,6 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log("username:", credentials.username);
-    console.log("Password:", credentials.password);
     try {
       const response = await axios.post(`${BASE_URL}/${LOGIN_URL}`, {
         username: credentials.username,
@@ -34,6 +33,7 @@ const Login = () => {
       });
       const token = response?.data?.accessToken;
       if (token) login(token);
+      toast.success("Successfully Logged In");
       navigate("/");
     } catch (error) {
       console.error(
@@ -73,6 +73,7 @@ const Login = () => {
           <button type="submit">Login</button>
         </form>
       </div>
+      <ToastContainer position="bottom-left" />
     </div>
   );
 };
