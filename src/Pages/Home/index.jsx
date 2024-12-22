@@ -56,11 +56,11 @@ function Home() {
         <div className="testimonials-grid">
           <div className="testimonial-item">
             <p>&apos;This platform has transformed how we monitor our IoT devices. It&apos;s simple and efficient!&apos;</p>
-            <h4>- Mr. Mayank Rathore, Senior Backend Engineer</h4>
+            <h4>- Vishal Lade, Product Manager</h4>
           </div>
           <div className="testimonial-item">
             <p>&apos;The ability to create custom channels and get real-time data is a game changer.&apos;</p>
-            <h4>- Mr. Vishu Malik, Senior MQTT Engineer</h4>
+            <h4>- Aditya Sinha, Senior MQTT Engineer</h4>
           </div>
         </div>
       </section>
