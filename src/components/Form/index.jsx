@@ -9,9 +9,6 @@ export default function Form() {
   const [formData, setFormData] = useState({
     fullName: "",
     field1: "",
-    field2: "",
-    field3: "",
-    field4: "",
     description: "",
   });
 
@@ -75,42 +72,6 @@ export default function Form() {
           className="form-input"
           placeholder="Enter your field 1"
           value={formData.field1}
-          onChange={handleInputChange}
-        />
-
-        <label htmlFor="field2" className="form-label">
-          Field 2:
-        </label>
-        <input
-          type="text"
-          name="field2"
-          className="form-input"
-          placeholder="Enter your field 2"
-          value={formData.field2}
-          onChange={handleInputChange}
-        />
-
-        <label htmlFor="field3" className="form-label">
-          Field 3:
-        </label>
-        <input
-          type="text"
-          name="field3"
-          className="form-input"
-          placeholder="Enter your field 3"
-          value={formData.field3}
-          onChange={handleInputChange}
-        />
-
-        <label htmlFor="field4" className="form-label">
-          Field 4:
-        </label>
-        <input
-          type="text"
-          name="field4"
-          className="form-input"
-          placeholder="Enter your field 4"
-          value={formData.field4}
           onChange={handleInputChange}
         />
 

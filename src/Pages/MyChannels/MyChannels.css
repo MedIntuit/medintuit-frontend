@@ -2,16 +2,15 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    padding: 20px;
+    padding: 40px;
   }
   
   .channel-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background-color: #7F5DF6;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    max-width: 300px;
+    padding: 40px;
+    max-width: 320px;
     text-align: center;
     transition: transform 0.2s;
     cursor: pointer;
@@ -22,21 +21,28 @@
   }
   
   .channel-card h3 {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-size: 1.5em;
-    color: #333;
+    color: white;
   }
   
 
   .channel-description {
     font-size: 0.9rem;
-    color: #666666c2;
-    border-bottom: 1px solid rgba(128, 128, 128, 0.462);
+    padding-bottom: 5px;
+    color: white;
+    border-bottom: 1px solid rgba(59, 57, 57, 0.748);
   }
   
   .channel-fields p {
-    margin: 5px 0;
+    margin: 20px 0;
     font-size: 0.9em;
-    color: #444;
+    color: white;
   }
-  
+  .channel-container .keys {
+    color: black;
+    font-family: monospace;
+  }
+  .bold {
+    font-weight: bold;
+  }

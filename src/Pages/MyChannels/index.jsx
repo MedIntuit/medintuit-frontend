@@ -3,7 +3,7 @@ import axios from "axios";
 import { BASE_URL, CHANNEL_URL } from "../../constants/api_urls";
 import { Link } from "react-router-dom";
 import Loader from "../../components/loader/loader";
-import "./UserChannels.css";
+import "./MyChannels.css";
 
 const MyChannel = () => {
   const [loading, setLoading] = useState(true);
@@ -37,12 +37,9 @@ const MyChannel = () => {
                 <h3>{channel.name} Channel</h3>
                 <p className="channel-description">{channel.description}</p>
                 <div className="channel-fields">
-                  <p>Field 1: {channel.field1}</p>
-                  <p>Field 2: {channel.field2}</p>
-                  <p>Field 3: {channel.field3}</p>
-                  <p>Field 4: {channel.field4}</p>
+                  <p><span className="bold">Field :</span>{channel.field1}</p>
                 </div>
-                <p>API Key: {channel.apiKey}</p>
+                <p className="keys">API Key: {channel.apiKey}</p>
               </div>
             </Link>
           ))}
