@@ -63,6 +63,12 @@
   .login-container button:hover {
     background-color: #0056b3;
   }
+
+  .login-container button:disabled {
+    cursor: not-allowed;
+    background-color: #007bffa0;
+    color: rgb(237, 237, 237);
+  }
   
   .login-container .extra-links {
     margin-top: 10px;

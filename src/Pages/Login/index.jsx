@@ -7,6 +7,8 @@ import { AuthContext } from "../../context/auth";
 import { toast, ToastContainer } from "react-toastify";
 
 const Login = () => {
+  const [isLoginRequestInProgress, setIsLoginRequestInProgress] =
+    useState(false);
   const [credentials, setCredentials] = useState({
     username: "",
     password: "",
@@ -25,7 +27,7 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setIsLoginRequestInProgress(true);
     try {
       const response = await axios.post(`${BASE_URL}/${LOGIN_URL}`, {
         username: credentials.username,
@@ -36,10 +38,12 @@ const Login = () => {
       toast.success("Successfully Logged In");
       navigate("/");
     } catch (error) {
-      console.error(
+      toast.error(
         "Login failed:",
         error.response ? error.response.data : error.message
       );
+    } finally {
+      setIsLoginRequestInProgress(false);
     }
   };
 
@@ -70,7 +74,9 @@ const Login = () => {
               required
             />
           </div>
-          <button type="submit">Login</button>
+          <button type="submit" disabled={isLoginRequestInProgress}>
+            {isLoginRequestInProgress ? "Please wait..." : "Login"}
+          </button>
         </form>
       </div>
       <ToastContainer position="bottom-left" />
