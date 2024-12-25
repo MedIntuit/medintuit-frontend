@@ -1,4 +1,5 @@
 import HeroImage from '/public/images/healthcare.jpg'
+import Features from './Components/Features/Features';
 import './home.css';
 
 function Home() {
@@ -15,23 +16,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="features-section">
-        <h2>Features</h2>
-        <div className="features-grid">
-          <div className="feature-item">
-            <h3>Create Channels</h3>
-            <p>Set up multiple channels to collect data from various IoT devices, ensuring streamlined data flow.</p>
-          </div>
-          <div className="feature-item">
-            <h3>View Real-Time Data</h3>
-            <p>Access and monitor real-time data from your connected devices in a simple and intuitive interface.</p>
-          </div>
-          <div className="feature-item">
-            <h3>Custom API Keys</h3>
-            <p>Generate unique API keys for secure data access, supporting both read and write operations.</p>
-          </div>
-        </div>
-      </section>
+      <Features />
 
        <section className="how-it-works-section">
         <h2>How It Works</h2>
