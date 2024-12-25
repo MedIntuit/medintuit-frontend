@@ -1,7 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import "./header.css";
+import logo from '../../../public/images/logo.png'
 import { AuthContext } from "../../context/auth";
 import { useContext } from "react";
+import "./header.css";
 
 export default function Header() {
   const { isAuthenticated, logout } = useContext(AuthContext);
@@ -9,8 +10,8 @@ export default function Header() {
 
   return (
     <div className="header">
-      <h1 className="name" onClick={() => navigate("/")}>
-        MedIntuit
+      <h1 className="logo" onClick={() => navigate("/")}>
+        <img src={logo} alt="MedIntuit" />
       </h1>
       <ul className="header-links">
         {isAuthenticated && (

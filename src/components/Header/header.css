@@ -5,16 +5,21 @@
     align-items: center;
     justify-content: space-between;
     background-color: white;
-    padding: 15px 20px;
+    padding: 8px 20px;
 }
 
 .header-links {
 
 }
 
-.name {
+.logo {
   cursor: pointer;
-  text-decoration: overline;
+  width: 100px;
+}
+
+.logo img {
+  height: 100%;
+  width: 300px;
 }
 
 ul{
