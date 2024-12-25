@@ -25,8 +25,7 @@ export default function Header() {
             </ul>
           </li>
         )}
-        <li>App</li>
-        <li>Community</li>
+        <li><a href="https://github.com/MedIntuit">GitHub community</a></li>
         <li>Support</li>
       </ul>
       {!isAuthenticated ? (
