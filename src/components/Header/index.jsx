@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import logo from '../../../public/images/logo.png'
+import logo from "../../../public/images/logo.png";
 import { AuthContext } from "../../context/auth";
 import { useContext } from "react";
 import "./header.css";
@@ -25,8 +25,10 @@ export default function Header() {
             </ul>
           </li>
         )}
-        <li><a href="https://github.com/MedIntuit">GitHub community</a></li>
-        <li>Support</li>
+        <li>
+          <a href="https://github.com/MedIntuit">GitHub community</a>
+        </li>
+        <li onClick={() => navigate("/about")}>About</li>
       </ul>
       {!isAuthenticated ? (
         <>

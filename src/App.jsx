@@ -9,6 +9,7 @@ import { AuthProvider } from "./context/auth";
 import PrivateRoute from "./components/PrivateRoute";
 import MyChannels from "./Pages/MyChannels";
 import Channel from "./Pages/Channel/Channel.jsx";
+import About from "./Pages/About/About.jsx";
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
               </PrivateRoute>
             }
           />
+          <Route path="/about" element={<About />} />
         </Routes>
       </AuthProvider>
     </>

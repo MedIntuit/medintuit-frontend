@@ -1,0 +1,32 @@
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0 0 0;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  .about-title {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: #222;
+  }
+  
+  .about-subtitle {
+    font-size: 1.5rem;
+    color: #555;
+  }
+  
+  .about-content {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  .about-image {
+    width: 600px;
+  }
+  
