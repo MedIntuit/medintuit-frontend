@@ -1,0 +1,15 @@
+.testimonials-container {
+    margin: 7rem 0;
+}
+.testimonials-wrapper {
+    margin: 4rem 0 0 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    justify-items: center;
+}
+.testimonials-heading {
+    margin-top: 2rem;
+    font-size: 2.2rem;  
+    text-align: center;
+}
