@@ -2,12 +2,13 @@ import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
-import Channel from "./Pages/Channel";
+import CreateChannel from "./Pages/CreateChannel";
 import "./App.css";
 import Signup from "./Pages/Signup";
 import { AuthProvider } from "./context/auth";
 import PrivateRoute from "./components/PrivateRoute";
-import MyChannel from "./Pages/Channel/MyChannel";
+import MyChannels from "./Pages/MyChannels";
+import Channel from "./Pages/Channel/Channel.jsx";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
             path="/create-channel"
             element={
               <PrivateRoute>
-                <Channel />
+                <CreateChannel />
               </PrivateRoute>
             }
           />
@@ -30,7 +31,15 @@ function App() {
             path="/my-channel"
             element={
               <PrivateRoute>
-                <MyChannel />
+                <MyChannels />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="channel/:id"
+            element={
+              <PrivateRoute>
+                <Channel />
               </PrivateRoute>
             }
           />
