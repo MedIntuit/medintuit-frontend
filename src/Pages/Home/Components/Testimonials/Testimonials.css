@@ -1,4 +1,6 @@
 .testimonials-container {
+    background-color: #7F5DF6;
+    padding: 2rem 0;
     margin: 7rem 0;
 }
 .testimonials-wrapper {
@@ -9,6 +11,7 @@
     justify-items: center;
 }
 .testimonials-heading {
+    color: white;
     margin-top: 2rem;
     font-size: 2.2rem;  
     text-align: center;

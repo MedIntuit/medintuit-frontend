@@ -1,9 +1,12 @@
 import HeroImage from "/public/images/healthcare.jpg";
 import Features from "./Components/Features/Features";
 import Testimonials from "./Components/Testimonials/Testimonials";
+import Footer from "./Components/Footer/Footer";
+import { useNavigate } from "react-router-dom";
 import "./home.css";
 
 function Home() {
+  const navigate = useNavigate();
   return (
     <div className="home-page">
       <section className="hero-section">
@@ -13,7 +16,7 @@ function Home() {
             Manage your smart devices, monitor real-time data, and create
             customized channels for seamless IoT integration.
           </p>
-          <button className="cta-button">Get Started</button>
+          <button className="cta-button" onClick={() => navigate('/create-channel')}>Get Started</button>
         </div>
         <div className="hero-image">
           <img src={HeroImage} alt="IoT Graphic" />
@@ -48,23 +51,8 @@ function Home() {
           </div>
         </div>
       </section>
-
       <Testimonials />
-
-      <footer className="footer-section">
-        <p>&copy; 2024 My IoT App. All Rights Reserved.</p>
-        <ul>
-          <li>
-            <a href="#privacy-policy">Privacy Policy</a>
-          </li>
-          <li>
-            <a href="#terms-of-service">Terms of Service</a>
-          </li>
-          <li>
-            <a href="#contact-us">Contact Us</a>
-          </li>
-        </ul>
-      </footer>
+      <Footer />
     </div>
   );
 }
