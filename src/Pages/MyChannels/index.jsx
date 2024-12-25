@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { BASE_URL, CHANNEL_URL } from "../../constants/api_urls";
 import { Link } from "react-router-dom";
-import Loader from "../../components/loader/loader";
+import Loader from "../../components/Loader/Loader";
 import "./MyChannels.css";
 
 const MyChannel = () => {

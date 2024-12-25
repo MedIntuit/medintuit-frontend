@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import { BASE_URL, GET_CHANNEL_URL } from "../../constants/api_urls";
 import { useParams } from "react-router-dom";
 import Chart from "../../components/Chart/Chart.jsx";
+import Loader from "../../components/Loader/Loader.jsx";
 import './channel.css'
-import Loader from "../../components/loader/loader.jsx";
 
 const Channel = () => {
   const [loading, setLoading] = useState(true);
