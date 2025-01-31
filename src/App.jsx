@@ -3,13 +3,15 @@ import Header from "./components/Header";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import CreateChannel from "./Pages/CreateChannel";
-import "./App.css";
 import Signup from "./Pages/Signup";
 import { AuthProvider } from "./context/auth";
 import PrivateRoute from "./components/PrivateRoute";
 import MyChannels from "./Pages/MyChannels";
 import Channel from "./Pages/Channel/Channel.jsx";
 import About from "./Pages/About/About.jsx";
+import DataCleaningUI from "./Pages/DataCleaningUI/DataCleaningUI.jsx";
+
+import "./App.css";
 
 function App() {
   return (
@@ -45,6 +47,7 @@ function App() {
             }
           />
           <Route path="/about" element={<About />} />
+          <Route path="/data-cleaning-by-finding-missing-values" element={<DataCleaningUI />} />
         </Routes>
       </AuthProvider>
     </>

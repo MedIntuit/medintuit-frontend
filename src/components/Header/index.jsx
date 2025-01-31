@@ -15,15 +15,26 @@ export default function Header() {
       </h1>
       <ul className="header-links">
         {isAuthenticated && (
-          <li className="channel-options-wrapper" htmlFor="channel">
-            Channels
-            <ul className="channel-options">
-              <li onClick={() => navigate("/create-channel")}>
-                Create Channel
-              </li>
-              <li onClick={() => navigate("/my-channel")}>My Channels</li>
-            </ul>
-          </li>
+          <>
+            <li className="channel-options-wrapper" htmlFor="channel">
+              Channels
+              <ul className="channel-options">
+                <li onClick={() => navigate("/create-channel")}>
+                  Create Channel
+                </li>
+                <li onClick={() => navigate("/my-channel")}>My Channels</li>
+              </ul>
+            </li>
+            <li className="channel-options-wrapper" htmlFor="preprocessing">
+              Data Preprocessing
+              <ul className="channel-options">
+                <li onClick={() => navigate("/data-cleaning-by-finding-missing-values")}>
+                  Data cleaning - Missing values
+                </li>
+              </ul>
+            </li>
+          </>
+
         )}
         <li>
           <a href="https://github.com/MedIntuit">GitHub community</a>
