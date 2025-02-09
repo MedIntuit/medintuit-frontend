@@ -31,6 +31,9 @@ export default function Header() {
                 <li onClick={() => navigate("/data-cleaning-by-finding-missing-values")}>
                   Data cleaning - Missing values
                 </li>
+                <li onClick={() => navigate("/outliers-detection-and-removal")}>
+                  Outliers detection - removing outliers
+                </li>
               </ul>
             </li>
           </>

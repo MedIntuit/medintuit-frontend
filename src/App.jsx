@@ -12,6 +12,7 @@ import About from "./Pages/About/About.jsx";
 import DataCleaningUI from "./Pages/DataCleaningUI/DataCleaningUI.jsx";
 
 import "./App.css";
+import Outlier_detection from "./Pages/OutlierDetection/Outlier_Detection.jsx";
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
           />
           <Route path="/about" element={<About />} />
           <Route path="/data-cleaning-by-finding-missing-values" element={<DataCleaningUI />} />
+          <Route path="/outliers-detection-and-removal" element={<Outlier_detection />} />
         </Routes>
       </AuthProvider>
     </>
