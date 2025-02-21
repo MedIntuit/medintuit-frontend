@@ -39,7 +39,6 @@ const MyChannel = () => {
                 <div className="channel-fields">
                   <p><span className="bold">Field :</span>{channel.field1}</p>
                 </div>
-                <p className="keys">API Key: {channel.apiKey}</p>
               </div>
             </Link>
           ))}
