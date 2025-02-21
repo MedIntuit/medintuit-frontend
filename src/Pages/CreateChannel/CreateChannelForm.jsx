@@ -3,12 +3,12 @@ import axios from "axios";
 import { BASE_URL, CREATE_CHANNEL_URL } from "../../constants/api_urls";
 import { ToastContainer, toast } from "react-toastify";
 
-import "./Form.css";
+import "./CreateChannelForm.css";
 
-export default function Form() {
+export default function CreateChannelForm() {
   const [formData, setFormData] = useState({
     fullName: "",
-    field1: "",
+    field: "",
     description: "",
   });
 
@@ -29,7 +29,7 @@ export default function Form() {
         `${BASE_URL}/${CREATE_CHANNEL_URL}`,
         {
           name: formData.fullName,
-          field1: formData.field1,
+          field1: formData.field,
           description: formData.description,
         },
         {
@@ -52,26 +52,26 @@ export default function Form() {
         <h2 className="form-title">Create Channel</h2>
 
         <label htmlFor="name" className="form-label">
-          Name:
+          Channel Name:
         </label>
         <input
           type="text"
           name="fullName"
           className="form-input"
-          placeholder="Dew Point Measurement"
+          placeholder="e.g.- Temperature sensor device"
           value={formData.fullName}
           onChange={handleInputChange}
         />
 
-        <label htmlFor="field1" className="form-label">
-          Field 1:
+        <label htmlFor="field" className="form-label">
+          Field To Be Measured:
         </label>
         <input
           type="text"
-          name="field1"
+          name="field"
           className="form-input"
-          placeholder="Enter your field 1"
-          value={formData.field1}
+          placeholder="e.g.- Temperature"
+          value={formData.field}
           onChange={handleInputChange}
         />
 
