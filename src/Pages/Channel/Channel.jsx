@@ -4,6 +4,7 @@ import { BASE_URL, GET_CHANNEL_URL } from "../../constants/api_urls";
 import { useParams } from "react-router-dom";
 import Chart from "../../components/Chart/Chart.jsx";
 import Loader from "../../components/Loader/Loader.jsx";
+import ApiInfo from "./ApiInfo/ApiInfo.jsx";
 import './Channel.css'
 
 const Channel = () => {
@@ -37,8 +38,13 @@ const Channel = () => {
         <Loader />
       ) : (
         <div className="chart-container">
+          <div className="chart-wrapper">
           <h1>{channelData.name}</h1>
           <Chart fieldName={channelData.field1} data={channelData.fieldData} />
+          </div>
+          <div>
+            <ApiInfo apiKey={channelData.apiKey} fieldName={channelData.field1} />
+          </div>
         </div>
       )}
     </div>

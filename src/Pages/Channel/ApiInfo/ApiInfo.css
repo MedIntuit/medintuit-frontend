@@ -1,0 +1,72 @@
+.api-info-section {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #f9f9f9;
+    margin-top: 5rem;
+    position: relative;
+  }
+  
+  .api-key-container, .api-request-container {
+    margin-bottom: 20px;
+  }
+  .api-request-container {
+    margin-top: 30px;
+  }
+  
+  .api-key-box, .request-body-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  .api-key-box {
+    padding: 10px 20px;
+  }
+  
+  .api-key-box button, .request-body-box button {
+    margin-left: 10px;
+    padding: 4px 8px;
+    border: none;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  
+  .api-key-box button:hover, .request-body-box button:hover {
+    background: #0056b3;
+  }
+  
+  .request-body-box pre {
+    background: #eee;
+    padding: 10px;
+    border-radius: 5px;
+    white-space: pre-wrap;
+  }
+  
+  .eye-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    vertical-align: middle;
+  }
+  .mt4 {
+    margin-top: 4px;
+  }
+  .monospace {
+    font-family: monospace;
+  }
+  .key-icon {
+    width: 50px;
+    position: absolute;
+    top: -15px;
+    left: -15px;
+  }
