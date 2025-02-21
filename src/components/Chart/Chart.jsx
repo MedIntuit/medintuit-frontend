@@ -24,7 +24,7 @@ ChartJS.register(
   Legend
 );
 
-const Chart = ({ data }) => {
+const Chart = ({ fieldName, data }) => {
   useEffect(() => {
     return () => {
       ChartJS.getChart("chart-id")?.destroy();
@@ -45,7 +45,7 @@ const Chart = ({ data }) => {
     labels,
     datasets: [
       {
-        label: "Temperature (°C)",
+        label: `${fieldName} (°C)`,
         data: dataPoints,
         fill: false,
         borderColor: "rgb(75, 192, 192)",
@@ -60,7 +60,7 @@ const Chart = ({ data }) => {
       tooltip: {
         callbacks: {
           label: function (tooltipItem) {
-            return `Temperature: ${tooltipItem.raw}°C`;
+            return `${fieldName}: ${tooltipItem.raw}°C`;
           },
         },
       },
@@ -84,7 +84,7 @@ const Chart = ({ data }) => {
         min: 0,
         title: {
           display: true,
-          text: "Temperature (°C)",
+          text: `${fieldName} (°C)`,
         },
       },
     },

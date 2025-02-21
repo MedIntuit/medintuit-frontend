@@ -37,7 +37,8 @@ const Channel = () => {
         <Loader />
       ) : (
         <div className="chart-container">
-          <Chart data={channelData.fieldData} />
+          <h1>{channelData.name}</h1>
+          <Chart fieldName={channelData.field1} data={channelData.fieldData} />
         </div>
       )}
     </div>
