@@ -9,6 +9,8 @@ export default function Form() {
   const [formData, setFormData] = useState({
     fullName: "",
     field1: "",
+    minThreshold: "",
+    maxThreshold: "",
     description: "",
   });
 
@@ -30,6 +32,8 @@ export default function Form() {
         {
           name: formData.fullName,
           field1: formData.field1,
+          minThreshold: formData.minThreshold,
+          maxThreshold: formData.maxThreshold,
           description: formData.description,
         },
         {
@@ -72,6 +76,28 @@ export default function Form() {
           className="form-input"
           placeholder="Enter your field 1"
           value={formData.field1}
+          onChange={handleInputChange}
+        />
+        <label htmlFor="field1" className="form-label">
+          Minimun Threshold:
+        </label>
+        <input
+          type="text"
+          name="minThreshold"
+          className="form-input"
+          placeholder="Enter your minimum threshold value"
+          value={formData.minThreshold}
+          onChange={handleInputChange}
+        />
+        <label htmlFor="field1" className="form-label">
+          Maximum Threshold:
+        </label>
+        <input
+          type="text"
+          name="maxThreshold"
+          className="form-input"
+          placeholder="Enter your maximum threshold value"
+          value={formData.maxThreshold}
           onChange={handleInputChange}
         />
 

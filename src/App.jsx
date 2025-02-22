@@ -10,7 +10,6 @@ import MyChannels from "./Pages/MyChannels";
 import Channel from "./Pages/Channel/Channel.jsx";
 import About from "./Pages/About/About.jsx";
 import DataCleaningUI from "./Pages/DataCleaningUI/DataCleaningUI.jsx";
-
 import "./App.css";
 import Outlier_detection from "./Pages/OutlierDetection/Outlier_Detection.jsx";
 
