@@ -1,7 +1,7 @@
-import Form from "../../components/Form";
+import CreateChannelForm from "./CreateChannelForm";
 
 const CreateChannel = () => {
-  return <Form />;
+  return <CreateChannelForm />;
 };
 
 export default CreateChannel;
