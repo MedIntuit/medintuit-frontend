@@ -40,7 +40,7 @@ const Channel = () => {
         <div className="chart-container">
           <div className="chart-wrapper">
           <h1>{channelData.name}</h1>
-          <Chart fieldName={channelData.field1} data={channelData.fieldData} />
+          <Chart fieldName={channelData.field1} data={channelData.fieldData} minThresholdValue={channelData.minThreshold} maxThresholdValue={channelData.maxThreshold} />
           </div>
           <div>
             <ApiInfo apiKey={channelData.apiKey} fieldName={channelData.field1} />
