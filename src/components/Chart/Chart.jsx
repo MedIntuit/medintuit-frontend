@@ -31,17 +31,15 @@ const Chart = ({ fieldName, data }) => {
     };
   }, []);
 
-  const labels = data.map((item) => {
-    const date = new Date(item?.timestamp);
-    return date;
-  });
+  const labels = data.map((item) => new Date(item?.timestamp));
 
-  const dataPoints = data.map((item) => {
-    const field1Value = parseFloat(item?.field1);
-    const minValue = parseFloat(item?.minThreshold)
-    const maxValue = parseFloat(item?.maxThreshold)
-    return field1Value, minValue, maxValue;
-  });
+  const dataPoints = data.map((item) => parseFloat(item?.field1))
+
+  const minThreshold = data?.minThreshold ?? 40;
+  const maxThreshold = data?.maxThreshold ?? 90;
+
+  const minThresholdLine = new Array(data.length).fill(minThreshold);
+  const maxThresholdLine = new Array(data.length).fill(maxThreshold);
 
   const chartData = {
     labels,
@@ -50,22 +48,24 @@ const Chart = ({ fieldName, data }) => {
         label: `${fieldName} (°C)`,
         data: dataPoints,
         fill: false,
-        borderColor: "rgb(75, 192, 192)",
+        borderColor: "rgb(75, 0, 192)",
         tension: 0.1,
       },
       {
-        label: "MinThreshold Value(60)",
-        data: dataPoints,
-        fill: false,
-        borderColor: "rgb(212, 19, 19)",
-        tension: 0.1,
+        label: "MinThreshold(40)",
+        data: minThresholdLine,
+        borderColor: "blue",
+        borderWidth: 2,
+        borderDash: [5,5],
+        pointRadius: 0,
       },
       {
-        label: "MaxThreshold Value(100)",
-        data: dataPoints,
-        fill: false,
-        borderColor: "rgb(212, 19, 19)",
-        tension: 0.1,
+        label: "MaxThreshold(90)",
+        data: maxThresholdLine,
+        borderColor: "red",
+        borderWidth: 2,
+        borderDash: [5,5],
+        pointRadius: 0,
       },
     ],
   };
@@ -75,9 +75,7 @@ const Chart = ({ fieldName, data }) => {
     plugins: {
       tooltip: {
         callbacks: {
-          label: function (tooltipItem) {
-            return `${fieldName}: ${tooltipItem.raw}°C`;
-          },
+          label: (tooltipItem) => `${fieldName}: ${tooltipItem.raw}°C`,
         },
       },
       legend: {
