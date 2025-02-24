@@ -38,7 +38,9 @@ const Chart = ({ fieldName, data }) => {
 
   const dataPoints = data.map((item) => {
     const field1Value = parseFloat(item?.field1);
-    return field1Value;
+    const minValue = parseFloat(item?.minThreshold)
+    const maxValue = parseFloat(item?.maxThreshold)
+    return field1Value, minValue, maxValue;
   });
 
   const chartData = {
@@ -49,6 +51,20 @@ const Chart = ({ fieldName, data }) => {
         data: dataPoints,
         fill: false,
         borderColor: "rgb(75, 192, 192)",
+        tension: 0.1,
+      },
+      {
+        label: "MinThreshold Value(60)",
+        data: dataPoints,
+        fill: false,
+        borderColor: "rgb(212, 19, 19)",
+        tension: 0.1,
+      },
+      {
+        label: "MaxThreshold Value(100)",
+        data: dataPoints,
+        fill: false,
+        borderColor: "rgb(212, 19, 19)",
         tension: 0.1,
       },
     ],
