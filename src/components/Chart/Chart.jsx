@@ -24,7 +24,7 @@ ChartJS.register(
   Legend
 );
 
-const Chart = ({ fieldName, data }) => {
+const Chart = ({ fieldName, data, minThresholdValue, maxThresholdValue }) => {
   useEffect(() => {
     return () => {
       ChartJS.getChart("chart-id")?.destroy();
@@ -34,9 +34,8 @@ const Chart = ({ fieldName, data }) => {
   const labels = data.map((item) => new Date(item?.timestamp));
 
   const dataPoints = data.map((item) => parseFloat(item?.field1))
-
-  const minThreshold = data?.minThreshold ?? 40;
-  const maxThreshold = data?.maxThreshold ?? 90;
+  const minThreshold = minThresholdValue ?? null;
+  const maxThreshold = maxThresholdValue ?? null;
 
   const minThresholdLine = new Array(data.length).fill(minThreshold);
   const maxThresholdLine = new Array(data.length).fill(maxThreshold);
@@ -52,7 +51,7 @@ const Chart = ({ fieldName, data }) => {
         tension: 0.1,
       },
       {
-        label: "MinThreshold(40)",
+        label: `MinThreshold(${minThreshold})`,
         data: minThresholdLine,
         borderColor: "blue",
         borderWidth: 2,
@@ -60,7 +59,7 @@ const Chart = ({ fieldName, data }) => {
         pointRadius: 0,
       },
       {
-        label: "MaxThreshold(90)",
+        label: `MaxThreshold(${maxThreshold})`,
         data: maxThresholdLine,
         borderColor: "red",
         borderWidth: 2,
