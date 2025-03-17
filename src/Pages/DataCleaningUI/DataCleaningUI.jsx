@@ -81,10 +81,10 @@ function CSVCleaner() {
     const downloadDummyFile = () => {
         const dummyCSV = `ID,Age,Salary,Experience
 1,25,50000,2
-2,30,,5
+2,300,,5
 3,,70000,8
 4,40,80000,
-5,35,60000,7`;
+5,355,60000,7`;
 
         const blob = new Blob([dummyCSV], { type: "text/csv" });
         const url = URL.createObjectURL(blob);
