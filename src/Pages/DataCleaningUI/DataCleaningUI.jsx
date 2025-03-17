@@ -81,7 +81,7 @@ function CSVCleaner() {
     const downloadDummyFile = () => {
         const dummyCSV = `ID,Age,Salary,Experience
 1,25,50000,2
-2,300,,5
+2,30,,5
 3,,70000,8
 4,40,80000,
 5,355,60000,7`;
