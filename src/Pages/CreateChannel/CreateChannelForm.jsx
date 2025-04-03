@@ -41,7 +41,6 @@ export default function CreateChannelForm() {
         }
       );
       toast.success("Channel Successfully Created");
-      console.log("Response:", response);
     } catch (error) {
       console.error(
         "Channel Creation Failed:",

@@ -23,7 +23,6 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("credentials: ", credentials);
 
     try {
       await axios.post(`${BASE_URL}/${SIGNUP_URL}`, {

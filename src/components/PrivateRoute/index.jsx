@@ -6,7 +6,6 @@ import { AuthContext } from '../../context/auth';
 // eslint-disable-next-line react/prop-types
 const PrivateRoute = ({ children }) => {
   const { isAuthenticated } = useContext(AuthContext);
-  console.log("isAuth", isAuthenticated)
   return isAuthenticated ? children : <Navigate to="/login" />;
 };
 

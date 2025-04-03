@@ -4,12 +4,10 @@ const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  console.log("isAuthenticated in context", isAuthenticated);
 
   useEffect(() => {
     async function checkLoggedIn() {
       const token = localStorage.getItem("token");
-      console.log("Token in useEffect", token);
       if (token) {
         setIsAuthenticated(true);
       }
