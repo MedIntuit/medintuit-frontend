@@ -1,4 +1,4 @@
-export const BASE_URL = import.meta.env.REACT_APP_API_URL || "http://localhost:8080"; 
+export const BASE_URL = import.meta.env.DEV ? "http://localhost:8080" : import.meta.env.VITE_API_URL; 
 export const SIGNUP_URL = "api/auth/signup";
 export const LOGIN_URL = "api/auth/signin";
 export const CHANNEL_URL = "user-channels";
