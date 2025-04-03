@@ -3,16 +3,13 @@ import { createContext, useState, useEffect } from "react";
 const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(() => {
+    return !!localStorage.getItem("token");
+  });
 
   useEffect(() => {
-    async function checkLoggedIn() {
-      const token = localStorage.getItem("token");
-      if (token) {
-        setIsAuthenticated(true);
-      }
-    }
-    checkLoggedIn();
+    const token = localStorage.getItem("token");
+    setIsAuthenticated(!!token);
   }, []);
 
   const login = (token) => {
